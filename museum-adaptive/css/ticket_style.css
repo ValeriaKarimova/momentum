@@ -5,18 +5,20 @@
 }
 
 .ticket_container {
-    width: 970px;
-    height: 663px;
+    max-width: 970px;
+    width: 100%;
+    height: 755px;
     margin: 0 auto;
     padding-top: 90px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .cancel_button {
     position: absolute;
-    right: 176px;
-    top: 61px;
+    right: 262px;
+    top: 50px;
 }
 
 .ticket_container h2 {
@@ -58,13 +60,13 @@
 
 .entry_ticket {
     grid-area: entry;
-    width: 400px;
+    max-width: 400px;
     height: 135px;
 }
 
 .date, 
 .time {
-    width: 190px;
+    max-width: 190px;
 }
 
 .date {
@@ -87,7 +89,7 @@
     grid-area: tel;
 }
 
-.ticket_type {
+.ticketType {
     grid-area: ticket_type;
 }
 
@@ -96,11 +98,62 @@
 }
 
 .booking {
-    min-width: 400px;
+    max-width: 400px;
+    width: 100%;
 }
 
+.entry_ticket_block {
+    grid-area: entry;
+    border: 1px solid #030303;
+    margin-top: 3px;
+}
+
+.entry_ticket_main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 7px;
+}
+
+.entry_ticket_main p {
+    padding: 18px 0 0 13px;
+    font: 400 18px "Roboto", sans-serif;
+    border: none;
+    color: #030303;
+}
+
+.entry_ticket_main .age_selector {
+    margin: 10px 0 0 79px;
+    max-width: 104px;
+    height: 35px;
+    border: none;
+}
+
+.entry_ticket_main .age_selector button {
+    background: black;
+    border: none;
+    width: 41px;
+    text-align: center;
+    font-size: 19px;
+    color: #ffffff;
+}
+
+.entry_ticket_main .age_selector input {
+    height: 24px;
+    font-size: 19px;
+    width: 35px;
+}
+
+h6 {
+    padding: 8px 0 6px 13px;
+    font: 400 18px "Forum", serif;
+    color: #9D8665;
+    border-bottom: 2px solid #740C11;
+}
+
+
 .overview {
-    width: 530px;
+    max-width: 530px;
+    width: 100%;
     border: 1px solid #030303;
 }
 
@@ -187,7 +240,7 @@
 
 .first_card,
 .second_card {
-    width: 360px;
+    max-width: 360px;
     height: 211px;
     border-radius: 5px;
     position: relative;
@@ -216,7 +269,7 @@
 
 .card_header_text,
 .card_header_text input {
-    width: 215px;
+    width: 94%;
 }
 
 .card_header {

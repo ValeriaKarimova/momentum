@@ -1,4 +1,24 @@
 
+let burgerMenu = document.querySelector(".burger_menu");
+burgerMenu.addEventListener('click', function (e) {
+	document.querySelector('.adaptive_menu2').classList.toggle('hidden');
+	document.querySelector('.welcome_text').classList.toggle('hidden');
+	burgerMenu.classList.toggle('open');
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function setupSlider(name) {
 	const progress = document.querySelector(name);
@@ -11,7 +31,8 @@ function setupSlider(name) {
 	progress.dispatchEvent(new Event("input"))
 }
 
-setupSlider('.progress_timeline');
+setupSlider('.progress_timeline1');
+setupSlider('.progress_timeline2');
 setupSlider('.progress_volume');
 
 
