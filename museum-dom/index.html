@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="main.js">
     <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/animation.css"/>
     <link rel="stylesheet" href="css/ticket_style.css"/>
     <link rel="stylesheet" href="css/adaptive_1024.css"/>
     <link rel="stylesheet" href="css/adaptive_768.css"/>
@@ -39,10 +40,7 @@
     </header> 
 
 
-    
-
     <main>
-
         <section class="welcome">
             <div class="container">
                 
@@ -64,21 +62,26 @@
                 </div>
 
                 <div class="mona-slider">
-                    <img class="mona-lisa" src="assets/img/webp/Mona.jpg.webp" alt="mona-lisa">
-                    
+                    <div class="pictures_to_swipe">
+                    <img class="mona-lisa picture active" src="assets/img/webp/Mona.jpg.webp" alt="mona-lisa">
+                    <img class="picture" src="assets/img/welcome_slider/war1.jpg" alt="img">
+                    <img class="picture"  src="assets/img/welcome_slider/girl2.jpg" alt="img">
+                    <img class="picture"  src="assets/img/welcome_slider/plot3.jpg" alt="img">
+                    <img class="picture"  src="assets/img/welcome_slider/geography.jpg" alt="img">
+                    </div>
                     <div class="pagination_container">
                         <div class="pagination_contents">
                             <div class="pages_number">
-                                <span>01</span>
+                                <span class="currentSlideNumber">01</span>
                                 <span class="centr_span">|</span>
                                 <span>05</span>
                             </div>    
                             <div class="squares">
-                                <img src="assets/svg/active_slide_pagination.svg" alt="1">
-                                <img src="assets/svg/slide_pagination.svg" alt="2">
-                                <img src="assets/svg/slide_pagination.svg" alt="3">
-                                <img src="assets/svg/slide_pagination.svg" alt="4">
-                                <img src="assets/svg/slide_pagination.svg" alt="5">
+                                <div class="square square_active"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
                             </div>
                             <div class="arrows">
                                 <img class="left_arrow" src="assets/svg/←.svg" alt="left">
@@ -152,7 +155,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+            </div>
         </section>
 
          
@@ -164,11 +167,20 @@
                     <p class="hidding_p2">It was cleaned in 1984 to remove a <span>"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
                     <p class="hidding_p">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
                 </div>
+
+                <div class="explore_slider">
                 <div class="before_after">
-                    <img src="assets/img/webp/after.jpg.webp" alt="before_after">
+                    <div class="before">
+                    <img class="before_image" src="assets/img/webp/before.jpg.webp" alt="img">
+                    </div>
+                    <div class="after">
+                    <img class="overlay_image" src="assets/img/webp/after.jpg.webp" alt="before_after">
+                    </div>
+                    <div class="comparison_slider"><img src="assets/svg/explore_slider.svg" alt="comparison_slider"></div> 
+                </div>
                 </div>
             </div>
-            </section>
+            </section> 
             <section class="video" id="video">
             <div class="container">
                 <div class="video_header">
@@ -179,35 +191,41 @@
                     <button class="main_play_button">
                         <img src="assets/svg/main_play.svg" alt="play">
                     </button>
-                    <video src="assets/video/video0.mp4" poster="assets/video/poster0.jpg"></video>
+                    <video class="mainVideo" src="assets/video/video0.mp4" poster="assets/video/poster0.jpg"></video>
                     <input class="progress progress_timeline1" type="range" value="54" min="0" max="100" step="1">
                     <div class="video_controls">
                         <button class="control_play"><img src="assets/svg/play.svg" alt="play"></button>
-                        <input class="progress progress_timeline2" type="range" value="54" min="0" max="100" step="1">
+                        <input class="progress progress_timeline2" type="range" value="0" min="0" max="100" step="1">
                         <button class="control_volume"><img src="assets/svg/volume.svg" alt="volume"></button>
-                        <input type="range" value="43" min="0" max="100" step="1" class="progress progress_volume">
+                        <input type="range" value="100" min="0" max="100" step="1" class="progress progress_volume">
                         <button class="control_fullscreen"><img src="assets/svg/fullscreen.svg" alt="fullscreen"></button>
                     </div>
                     
                 </div>
                 <div class="three_video">
-                    <video src="assets/video/video1.mp4" poster="assets/video/poster3.jpg" controls></video>
-                    <video src="assets/video/video2.mp4" poster="assets/video/poster1.jpg" controls></video>
-                    <video class="hidding_video" src="assets/video/video3.mp4" poster="assets/video/poster2.jpg" controls></video>
+                    <div class="video_slider_wrapper">
+                        <div class="videos">
+                            <video class="video" src="assets/video/video0.mp4" poster="assets/video/poster0.jpg" controls></video>
+                            <video class="video" src="assets/video/video1.mp4" poster="assets/video/poster1.jpg" controls></video>
+                            <video class="video" src="assets/video/video2.mp4" poster="assets/video/poster2.jpg" controls></video>
+                            <video class="video" src="assets/video/video3.mp4" poster="assets/video/poster3.jpg" controls></video>
+                            <video class="video" src="assets/video/video4.mp4" poster="assets/video/poster4.jpg" controls></video>
+                        </div>
+                    </div>
                 </div>
                 <div class="circle_pagination">
-                    <img src="assets/svg/stroke.svg" alt="to_left_arrow">
-                    <img src="assets/svg/ellipse_active.svg" alt="active_circle">
-                    <img src="assets/svg/ellipse.svg" alt="circle">
-                    <img src="assets/svg/ellipse.svg" alt="circle">
-                    <img src="assets/svg/ellipse.svg" alt="circle">
-                    <img src="assets/svg/ellipse.svg" alt="circle">
+                    <img class="to_left_arrow" src="assets/svg/stroke.svg" alt="to_left_arrow">
+                    <div class="circle circle_active"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
                     <img class="to_right_arrow" src="assets/svg/stroke.svg" alt="to_right_arrow">
                 </div>
             </div>
         </section>
 
-        <section class="gallery" id="gallery">
+         <section class="gallery" id="gallery">
             <div class="container">
                 <h2>Art Gallery</h2>
                 <div class="gallery_images">
@@ -246,29 +264,29 @@
                         <div class="form_to_buy">
                             <div class="ticket_type">
                                 <h5>Ticket Type</h5>
-                                <input type="radio" class="custom_radio" name="exhibition" id="PE" value="Permanent Exhibition" checked>
+                                <input type="radio" class="custom_radio" name="exhibition" id="PE" value="20" checked>
                                 <label for="PE">Permanent exhibition</label><br>
-                                <input type="radio" class="custom_radio" name="exhibition" id="TE" value="Temporary Exhibition">
+                                <input type="radio" class="custom_radio" name="exhibition" id="TE" value="25">
                                 <label for="TE">Temporary exhibition</label><br>
-                                <input type="radio" class="custom_radio" name="exhibition" id="CA" value="Combined Admission">
+                                <input type="radio" class="custom_radio" name="exhibition" id="CA" value="40">
                                 <label for="CA">Combined Admission</label>
                             </div>
                             <div class="ticket_amount">
                                 <h5>Amount</h5>
                                 <p>Basic 18+</p>
                                 <div class="age_selector">
-                                    <button class="age_minus">–</button>
-                                    <input type="number" value="1" class="age_value" min="0" max="20">
-                                    <button class="age_plus">+</button>
+                                    <button class="age_minus" type="button">–</button>
+                                    <input type="number" value="0" class="age_value basic" min="0" max="20">
+                                    <button class="age_plus" type="button">+</button>
                                 </div>
                                 <p>Senior 65+</p>
                                 <div class="age_selector">
-                                    <button class="age_minus">–</button>
-                                    <input type="number" value="1" class="age_value" min="0" max="20">
-                                    <button class="age_plus">+</button>
+                                    <button class="age_minus" type="button">–</button>
+                                    <input type="number" value="0" class="age_value senior" min="0" max="20">
+                                    <button class="age_plus" type="button">+</button>
                                 </div>
-                                <h5 class="euro220">Total &#8364; <span>220</span></h5>
-                                <button class="buy_ticket ripple">Buy Now</button>
+                                <h5 class="euro220">Total &#8364; <span>0</span></h5>
+                                <button class="buy_ticket ripple" type="button">Buy Now</button>
                             </div>
                         </div>
                     </form>
@@ -286,31 +304,67 @@
                     <h2>Booking Tickets</h2>
                     <p>Tour to Louvre</p>
                     <div class="input_fields">
-                        <input class="date" type="date" required="required">
-                        <input class="time" type="time" required="required">
-                        <input class="user_name" type="text" placeholder="Name" required="required">
-                        <input class="email" type="email" placeholder="E-mail" required="required">
-                        <input class="tel" type="tel" placeholder="Phone" required="required">
+                        <div class="date_cont">
+                            <input class="date" type="date">
+                            <span class="error error_date" aria-live="polite">This date is in the past!</span>
+                        </div>
+                        <div class="time_cont">
+                            <input class="time" type="time" list="time_to_select">
+                            <span class="error error_time" aria-live="polite">We are not working during these hours!</span>
+                            <datalist id="time_to_select">
+                                <option value="09:00"></option>
+                                <option value="09:30"></option>
+                                <option value="10:00"></option>
+                                <option value="10:30"></option>
+                                <option value="11:00"></option>
+                                <option value="11:30"></option>
+                                <option value="12:00"></option>
+                                <option value="12:30"></option>
+                                <option value="13:00"></option>
+                                <option value="13:30"></option>
+                                <option value="14:00"></option>
+                                <option value="14:30"></option>
+                                <option value="15:00"></option>
+                                <option value="15:30"></option>
+                                <option value="16:00"></option>
+                                <option value="16:30"></option>
+                                <option value="17:00"></option>
+                                <option value="17:30"></option>
+                                <option value="18:00"></option>
+                            </datalist>
+                        </div>
+                        <div class="name_cont">
+                            <input class="user_name" type="text" placeholder="Name">
+                            <span class="error error_name" aria-live="polite">Name is not correct!</span>
+                        </div>
+                        <div class="email_cont">
+                            <input class="email" type="email" placeholder="E-mail">
+                            <span class="error error_email" aria-live="polite">Email is not correct!</span>
+                        </div>
+                        <div class="tel_cont">
+                            <input class="tel" type="tel" placeholder="Phone">
+                            <span class="error error_tel" aria-live="polite">Phone number is not correct!</span>
+                        </div>
                         <select class="ticketType" name="ticket_type">
                             <option value="">Ticket Type</option>
-                            <option value="1">Permanent exhibition</option>
-                            <option value="2">Temporary exhibition</option>
-                            <option value="3">Combined Admission</option>
+                            <option value="20">Permanent exhibition</option>
+                            <option value="25">Temporary exhibition</option>
+                            <option value="40">Combined Admission</option>
                         </select>
                         <div class="entry_ticket_block">
                             <h6>Entry Ticket</h6>
                         <div class="entry_ticket_main">
                             <p>Basic 18+ (20 &euro;)</p>
                                 <div class="age_selector">
-                                    <button class="age_minus">–</button>
-                                    <input type="number" value="1" class="age_value" min="0" max="20">
-                                    <button class="age_plus">+</button>
+                                    <button class="age_minus" type="button">–</button>
+                                    <input type="number" value="1" class="age_value basic" min="0" max="20">
+                                    <button class="age_plus" type="button">+</button>
                                 </div>
                                 <p>Senior 65+ (10 &euro;)</p>
                                 <div class="age_selector">
-                                    <button class="age_minus">–</button>
-                                    <input type="number" value="1" class="age_value" min="0" max="20">
-                                    <button class="age_plus">+</button>
+                                    <button class="age_minus" type="button">–</button>
+                                    <input type="number" value="1" class="age_value senior" min="0" max="20">
+                                    <button class="age_plus" type="button">+</button>
                                 </div>
                             </div>
                         </div>
@@ -322,9 +376,9 @@
                     <h4>Overview</h4>
                     <p>Tour to Louvre</p>
                     <ul>
-                        <li><img src="assets/svg/date.svg" alt="icon"><p>Friday, August 19</p></li>
-                        <li><img src="assets/svg/time.svg" alt="icon"><p>16 : 30</p></li>
-                        <li><img src="assets/svg/check_circle_outline.svg" alt="icon"><p>Temporary exhibition</p></li>
+                        <li><img src="assets/svg/date.svg" alt="icon"><p class="pref_date">Friday, August 19</p></li>
+                        <li><img src="assets/svg/time.svg" alt="icon"><p class="pref_time">16 : 30</p></li>
+                        <li><img src="assets/svg/check_circle_outline.svg" alt="icon"><p class="pref_type">Temporary exhibition</p></li>
                     </ul>
         
                 </div>
@@ -332,16 +386,16 @@
             </div>
             <div class="cost">
                 <div class="basic_ticket_cost">
-                <p><span>2</span> Basic (20 &euro;)</p>
-                <p>40 &euro;</p>
+                <p><span class="basic_num">2</span> Basic (<span class="one_basic">20</span> &euro;)</p>
+                <p><span class="sum_of_basic">40</span> &euro;</p>
             </div>
                 <div class="senior_ticket_cost">
-                <p><span>2</span> Senior (10 &euro;)</p>
-                <p>20 &euro;</p>
+                <p><span class="senior_num">2</span> Senior (<span class="one_senior">10</span> &euro;)</p>
+                <p><span class="sum_of_senior">20</span> &euro;</p>
                 </div>
                 <div class="total">
                     <p>Total:</p>
-                    <p>60 &euro;</p>
+                    <p><span class="total_sum_overlay">60</span> &euro;</p>
                 </div>
             </div> 
             
@@ -399,7 +453,7 @@
                 </div>
                 </div>
             </div>
-        </section>
+        </section> 
 
 
 
@@ -447,9 +501,11 @@
     </footer>
     
     
-
+    <div class="dark_mode_container">
+        <img src="assets/img/dark_mode_icon.png" alt="dark mode">
+    </div>
 
     <script async src="main.js"></script>
 
 </body>
-</html>
+</html> 

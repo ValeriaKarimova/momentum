@@ -1,0 +1,133 @@
+.picture {
+    display: none;
+    position: relative;
+    animation: 0.2s ease-in-out;
+}
+
+.pictures_to_swipe {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.active,
+.next {
+    display: block;
+}
+
+.next {
+    position: absolute;
+}
+
+.to_left {
+    animation-name: left;
+}
+
+.from_left {
+    animation-name: left;
+    animation-direction: reverse;
+}
+
+.to_right {
+    animation-name: right; 
+    animation-direction: reverse;
+}
+
+.from_right {
+    animation-name: right;
+}
+
+@keyframes left {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes right {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+.to_left_arrow:active {
+    transform: scale(1.8);
+}
+
+.to_right_arrow:active {
+    transform: scale(1.8) rotate(180deg);
+}
+
+.explore_slider {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.before_after {
+    overflow: hidden;
+    position: relative;
+    height: 605px;
+    width: 90%;
+    margin: 50px;
+}
+
+.before img,
+.after img {
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    max-width: fit-content;
+}
+
+.after img {
+    width: 100%;
+}
+
+.before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    z-index: 2;
+    width: 53%;
+    height: 100%;
+}
+
+.comparison_slider {
+    position: absolute;
+    overflow: hidden;
+    height: auto;
+    left: 50%;
+    top: 0;
+    z-index: 9;
+    height: 100%;
+    cursor: ew-resize;
+}
+
+.comparison_slider img {
+    height: 100%;
+    z-index: 10;
+}
+
+/* Form Validation */
+
+.error_input {
+    background-color: rgba(241, 197, 197, 0.8);
+}
+
+.error {
+    display: none;
+  }
+
+  .error_active {
+    display: inline-block;
+    width: 100%;
+    font-size: 90%;
+    color: red;
+    padding: 5px;
+}

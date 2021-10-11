@@ -85,7 +85,7 @@
     .squares {
         flex-grow: 205;
     }
-    .squares img{
+    .square {
         margin-right: 25px;
     }
 
@@ -129,11 +129,6 @@
 
     .hidding_p2 {
         display: none;
-    }
-
-    .explore .container img {
-        padding: 0;
-        margin: -18px 0 37px -1px;
     }
 
     .main_video {

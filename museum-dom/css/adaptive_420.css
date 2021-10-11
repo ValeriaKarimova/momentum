@@ -36,12 +36,13 @@
         margin-top: 3px;
     }
 
-    .squares img:last-child {
+    .square:last-child {
         margin-right: 0;
     }
 
-    .squares img { 
+    .square { 
         width: 7px;
+        height: 7px;
         margin-right: 10px;
     }
 
@@ -89,10 +90,6 @@
 
     .explore .container {
         margin-top: 58px;
-    }
-
-    .explore .container img {
-        margin: -25px 0 31px -1px;
     }
 
     .main_video {
@@ -237,11 +234,11 @@
 
     .input_fields {
         grid-template-areas:
-            "date date"
-            "time time"
-            "user_name user_name"
-            "email email"
-            "tel tel"
+            "date_cont date_cont"
+            "time_cont time_cont"
+            "name_cont name_cont"
+            "email_cont email_cont"
+            "tel_cont tel_cont"
             "ticket_type ticket_type"
             "entry entry";
     }
