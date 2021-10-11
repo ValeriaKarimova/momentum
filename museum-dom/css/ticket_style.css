@@ -41,12 +41,13 @@
 .input_fields {
     margin-top: 60px;
     display: grid;
-    grid-template-areas: "date time"
-                        "user_name user_name"
-                        "email email"
-                        "tel tel"
-                        "ticket_type ticket_type"
-                        "entry entry";
+    grid-template-areas:
+        "date_cont time_cont"
+        "name_cont name_cont"
+        "email_cont email_cont"
+        "tel_cont tel_cont"
+        "ticket_type ticket_type"
+        "entry entry";
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 
@@ -58,35 +59,39 @@
     height: 45px;
 }
 
+.input_fields input {
+    width: 100%;
+}
+
 .entry_ticket {
     grid-area: entry;
     max-width: 400px;
     height: 135px;
 }
 
-.date, 
-.time {
+.date_cont, 
+.time_cont {
     max-width: 190px;
 }
 
-.date {
-    grid-area: date;
+.date_cont {
+    grid-area: date_cont;
 }
 
-.time {
-    grid-area: time;
+.time_cont {
+    grid-area: time_cont;
 }
 
-.user_name {
-    grid-area: user_name;
+.name_cont {
+    grid-area: name_cont;
 }
 
-.email {
-    grid-area: email;
+.email_cont {
+    grid-area: email_cont;
 }
 
-.tel {
-    grid-area: tel;
+.tel_cont {
+    grid-area: tel_cont;
 }
 
 .ticketType {
@@ -222,7 +227,8 @@ h6 {
     padding-top: 8px;
 }
 
-.cost span {
+.basic_num,
+.senior_num {
     padding: 1px 11px;
     background-color: #030303;
     color: #a4a4a3;

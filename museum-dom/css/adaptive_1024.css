@@ -106,8 +106,9 @@
         padding: 0 0 3px 45px;
     }
 
-    .squares img {
+    .square {
         width: 12px;
+        height: 12px;;
     }
 
     .pages_number {
@@ -179,10 +180,6 @@
         font: 300 20px "Roboto", sans-serif;
         line-height: 36px;
         padding-bottom: 0;
-    }
-
-    .explore .container img {
-        padding: 62px 0 56px 133px;
     }
 
     .main_video {
@@ -387,7 +384,7 @@
     .squares{
         padding-left: 20px;
     }
-    .squares img{
+    .square {
         margin-right: 15px;
     }
     .pagination_container{
