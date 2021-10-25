@@ -1,9 +1,10 @@
 import playList from './playlist.js';
 import lang from './lang.js';
 
+let choosenLang = localStorage.getItem('lang') || 'en'; 
 
 i18next.init({
-    lng: 'en',
+    lng: choosenLang,
     debug: true,
     resources: lang,
   });
@@ -45,7 +46,9 @@ const hideGreeting = document.getElementById('hide-greeting');
 const hideAudio = document.getElementById('hide-audio');
 const hideWeather = document.getElementById('hide-weather');
 const hideQuote = document.getElementById('hide-quote');
-const bgSourceSelector = document.querySelector('.change-bg')
+const bgSourceSelector = document.querySelector('.change-bg');
+const localizableList = document.querySelectorAll('.i_can_localize');
+const twinkleList = document.querySelectorAll('.twinkle');
 
 
 
@@ -66,9 +69,22 @@ let songs = document.querySelectorAll('.play-item');
 function onLocalizationChanged() {
     
     city.placeholder = `${i18next.t("city")}`
+    
+    if (city.value == "Minsk" || city.value == "Минск") {
+        city.value = `${i18next.t("city")}`
+    }
     greeting.textContent = `${i18next.t(partOfDay)},`;
+    userName.value = i18next.t("placeholderKey");
+
+    for (let item of localizableList){
+        item.textContent = i18next.t(item.dataset.localizeKey)
+        
+    }
+
     getWeather();
 }
+
+
 
 
 
@@ -84,17 +100,41 @@ prevSong.addEventListener('click', playPrev);
 nextSong.addEventListener('click', playNext);
 language.addEventListener('change', changeLocalization);
 settings.addEventListener('click', hideSetting);
-hideTime.addEventListener('change', () => hideSection(time));
-hideDate.addEventListener('change', () => hideSection(currentDate));
-hideGreeting.addEventListener('change', () => hideSection(greetingSection));
-hideAudio.addEventListener('change', () => hideSection(player));
-hideWeather.addEventListener('change', () => hideSection(weather));
-hideQuote.addEventListener('change', () => hideSection(quoteSection));
 bgSourceSelector.addEventListener('change', changeBgSource);
+
+
+for (let twinkle of twinkleList) {
+
+    let isChecked = localStorage.getItem(twinkle.name) == "true";
+    twinkle.checked = isChecked;
+
+    let selector = '.' + twinkle.dataset.visibility;
+    let element = document.querySelector(selector)
+
+    if (twinkle.checked) {
+        element.classList.add('hide-section');
+    } else {
+        element.classList.remove('hide-section');
+    }
+
+    twinkle.addEventListener('change', () => {
+        localStorage.setItem(twinkle.name, twinkle.checked)
+        if (twinkle.checked) {
+            element.classList.add('hide-section');
+        } else {
+            element.classList.remove('hide-section');
+        }
+    })
+    
+}
+
 
 let bgSourceMode = localStorage.getItem('bgSourceMode') || "git";  // git unsplash flickr
 let option = bgSourceSelector.querySelector(`option[value='${bgSourceMode}']`)
 option.selected = true;
+option = language.querySelector(`option[value='${choosenLang}']`);
+option.selected = true;
+
 
 function changeBgSource(){
     bgSourceMode = bgSourceSelector.value;
@@ -104,6 +144,7 @@ function changeBgSource(){
 
 
 function changeLocalization(){
+    localStorage.setItem("lang", language.value);
     i18next.changeLanguage(language.value).then(() => {
         onLocalizationChanged()
     })
@@ -192,9 +233,20 @@ function saveLocalStorage() {
   }
 
 async function getWeather() {  
+
+    if (city.value == ""){
+        alert("city is empty");
+        return;
+    }
+
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${i18next.language}&appid=c742e9e2d55e34c546657c49543b46c2&units=metric`;
     const res = await fetch(url);
     const data = await res.json();
+
+    if (data.cod == 404) {
+        alert(data.message);
+        return;
+    }
     
     weatherIcon.className = 'weather-icon owf';
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
@@ -265,12 +317,7 @@ function hideSetting() {
     settingsMenu.classList.toggle('visible-menu');
 }
 
-function hideSection(elem) {
-    
-    elem.classList.toggle('hide-section');
-}
-
-function getLinkToImage() {
+async function getLinkToImage() {
     const url = 'https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=2Ot3LMQhWKxZ66f__-smnA2t8CBJ_mqinx-T5RklR3s';
     
     return fetch(url)
@@ -282,11 +329,26 @@ async function getLinkToFlickr() {
     const url = 'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=732f07db4225b051bf3537e27716bb8b&tags=nature&extras=url_l&format=json&nojsoncallback=1';
     
     return fetch(url)
-      .then(res => res.json())
-      .then(data => data.urls.regular);
+      .then(res => res.json());
 }
 
-// https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=732f07db4225b051bf3537e27716bb8b&tags=nature&extras=url_l&format=json&nojsoncallback=1
+let flickrData = null;
+
+async function whenFlickrDataIsReady() {
+    if (flickrData == null) {
+        return getLinkToFlickr()
+            .then(data => flickrData = data);
+    } else {
+        return Promise.resolve(flickrData);
+    }
+}
+
+function getRandomFlickrUrl(data) {
+    let photo = data.photos.photo[Math.floor(Math.random() * data.photos.photo.length)];
+    let result =  `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_b.jpg`;
+
+    return result;
+}
 
 function changeBackground() {
 
@@ -304,8 +366,9 @@ function changeBackground() {
             break;
         }
         case "flickr" : {
-            getLinkToFlickr()
-            .then(url => setBackground(url));
+            whenFlickrDataIsReady()
+                .then(data => getRandomFlickrUrl(data))
+                .then(url => setBackground(url));
 
             break;
         }

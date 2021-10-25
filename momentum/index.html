@@ -27,7 +27,7 @@
         </div>
           <div class="settings">
           <div class="choose-bg">
-            <h3>Background:</h3>
+            <h3 class="i_can_localize" data-localize-key="bg">Background:</h3>
             <select class="change-bg">
               <option value="git">Git Images</option>
               <option class="unsplash" value="unsplash">Unsplash</option>
@@ -35,31 +35,37 @@
             </select>
           </div>
           <div class="choose-lang">
-            <h3>Language:</h3>
+            <h3 class="i_can_localize" data-localize-key="lang">Language:</h3>
             <select class="change-lang">
               <option value="ru">RU</option>
               <option value="en" selected>EN</option>
             </select>
           </div>
           <div class="hide-block">
-            <h3>Hide elements:</h3>
-            <label for="hide-time">Time
-              <input type="checkbox" id="hide-time" name="time-block">
+            <h3 class="i_can_localize" data-localize-key="hide">Hide elements:</h3>
+            <label for="hide-time">
+              <span class="i_can_localize" data-localize-key="time">Time</span>
+              <input class="twinkle" data-visibility="time" type="checkbox" id="hide-time" name="time-block">
             </label>
-            <label for="hide-date">Date
-              <input type="checkbox" id="hide-date" name="date-block">
+            <label for="hide-date">
+              <span class="i_can_localize" data-localize-key="date">Date</span>
+              <input class="twinkle" data-visibility="date" type="checkbox" id="hide-date" name="date-block">
             </label>
-            <label for="hide-greeting">Greeting
-              <input type="checkbox" id="hide-greeting" name="greeting-block">
+            <label for="hide-greeting">
+              <span class="i_can_localize" data-localize-key="greeting">Greeting</span>
+              <input class="twinkle" data-visibility="greeting-container" type="checkbox" id="hide-greeting" name="greeting-block">
             </label>
-            <label for="hide-quote">Quotes
-             <input type="checkbox" id="hide-quote" name="quote-block">
+            <label for="hide-quote">
+              <span class="i_can_localize" data-localize-key="quote">Quotes</span>
+             <input class="twinkle" data-visibility="quotes" type="checkbox" id="hide-quote" name="quote-block">
             </label>
-            <label for="hide-weather">Weather
-              <input type="checkbox" id="hide-weather" name="weather-block">
+            <label for="hide-weather">
+              <span class="i_can_localize" data-localize-key="weather">Weather</span>
+              <input class="twinkle" data-visibility="weather" type="checkbox" id="hide-weather" name="weather-block">
             </label>
-            <label for="hide-audio">Audio
-              <input type="checkbox" id="hide-audio" name="audio-block">
+            <label for="hide-audio">
+              <span class="i_can_localize" data-localize-key="audio">Player</span>
+              <input class="twinkle" data-visibility="player" type="checkbox" id="hide-audio" name="audio-block">
             </label>
           </div>
         </div>
