@@ -1,0 +1,398 @@
+@media (max-width: 1480px) {
+    .container {
+        max-width: 1480px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+}
+
+
+
+@media (max-width: 1024px) {
+
+    header .container {
+        padding-top: 48px;
+        height: 130px;
+    }
+
+    .burger_menu {
+        background-image: url(../assets/svg/burger_menu.svg);
+        display: block;
+        width: 32px;
+        height: 18px;
+        margin-top: 8px;
+    }
+
+    .burger_menu.open {
+        background-image: url(../assets/svg/cancel_btn.svg);
+        width: 25px;
+        height: 25px;
+    }
+
+    .adaptive_menu2 {
+        margin-top: -2px;
+        z-index: 2;
+        width: 59%;
+        background: linear-gradient(to right, rgba(0,0,0,1.0) 74%, rgba(0,0,0,0.4) 91%, rgba(0,0,0,0.01) 99%);
+    }
+
+    .adaptive_menu2 ul {
+        width: 30%;
+        flex-direction: column;
+        margin-top: 37px;
+        row-gap: 23px;
+        margin-left: 35px;
+    }
+
+    .adaptive_menu2 a {
+        margin-left: 0px;
+        letter-spacing: 0.0em;
+    }
+
+    .adaptive_menu2 li {
+        row-gap: 33px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .adaptive_menu2 img {
+        margin-left: 26px;
+    }
+
+    
+
+    header span {
+        padding: 3px 0 0 23px;
+    }
+
+    h1 {
+        width: 400px;
+        font: 400 50px "Forum", serif;
+        letter-spacing: 0.1em;
+        line-height: 90px;
+        margin: 51px 0 24px;
+    }
+
+    .welcome p {
+        font-size: 24px;
+    }
+
+    .welcome_text {
+        background: linear-gradient(to right, rgba(0,0,0,1.0) 74%, rgba(0,0,0,0.4) 91%, rgba(0,0,0,0.01) 99%);
+    }
+
+    .discover_button {
+        margin-top: 50px;
+        padding-top: 18px;
+        width: 300px;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .mona-slider {
+        margin-left: -115px;
+    }
+
+    .pagination_container {
+        margin-left: 0;
+    }
+
+    .arrows {
+        padding-left: 42px;
+    }
+
+    .squares {
+        padding: 0 0 3px 45px;
+    }
+
+    .square {
+        width: 12px;
+        height: 12px;;
+    }
+
+    .pages_number {
+        font: 300 20px "Roboto", sans-serif;
+
+    }
+
+    .adaptive_menu {
+        display: none;
+    }
+
+    h2 {
+        font-size: 50px;
+        margin-top: 72px;
+    }
+
+    .visiting_cards {
+        justify-content: space-evenly;
+        margin-top: 62px;
+    }
+    .visiting_card {
+        margin-bottom: 59px;
+    }
+
+    h3 {
+        font-size: 28px;
+        letter-spacing: 0.17em;
+    }
+
+    .h3_special {
+        letter-spacing: 0.1em;
+    }
+
+    .vt360 {
+        font-size: 20px;
+    }
+
+    .vt_small {
+        font-size: 16px;
+    }
+
+    .red_line {
+        width: 150px;
+        margin-top: 11px;
+    }
+
+    .visiting_cards img {
+        width: 330px;
+    }
+
+    .explore .container {
+        flex-direction: column;
+    }
+
+    .explore_text {
+        max-width: 100%;
+    }
+
+    .explore_text h2 {
+        margin-bottom: 63px;
+    }
+
+    .hidding_p {
+        display: none;
+    }
+
+    .explore_text p {
+        max-width: 948px;
+        font: 300 20px "Roboto", sans-serif;
+        line-height: 36px;
+        padding-bottom: 0;
+    }
+
+    .main_video {
+        padding-top: 19px;
+    }
+
+    .main_video video {
+        height: 504px;
+    }
+    
+    .main_play_button img {
+        width: 152px;
+        margin-top: 147px;
+        margin-left: -18px;
+    }
+
+    .video_controls {
+        height: 59px;
+        margin-top: -64px;
+        padding-top: 0px;
+    }
+
+    .control_fullscreen {
+        margin-left: 29px;
+        margin-right: 40px;
+        width: 43px;
+    }
+
+    .progress_volume {
+        margin-left: 44px;
+        height: 4px;
+    }
+
+    .control_volume {
+        margin-left: 32px;
+    }
+
+    .control_play {
+        width: 37px;
+        margin-left: 40px;
+    }
+
+    .progress_timeline {
+        margin-left: 30px;
+        width: 850px;
+        height: 4px;
+    }
+
+    .circle_pagination {
+        margin: 38px 0 -10px 393px;
+    }
+
+    .gallery h2 {
+        padding-top: 69px;
+        margin-bottom: -5px;
+    }
+
+    .gallery {
+        margin-top: -18px;
+    }
+
+    .gallery_images {
+        height: 1301px;
+    }
+
+    .gallery_images img {
+        width: 304px;
+        margin-bottom: 21px;
+    }
+
+    .ticket_main {
+        padding-top: 63px;
+        flex-wrap: wrap;
+    }
+
+    .ticket_main img {
+        width: 71%;
+        height: 440px;
+    }
+
+    .buy_ticket form {
+        width: 29%;
+    }
+
+    .cancel_button {
+        position: absolute;
+        right: 21px;
+        top: 39px;
+    }
+
+    .ticket_type {
+        display: none;
+    }
+
+    .form_to_buy {
+        width: auto;
+        padding-left: 80px;
+    } 
+
+    .ticket_amount h5 {
+        text-align: start;
+        margin-bottom: 29px;
+    }
+
+    .ticket_amount p {
+        margin: 17px 0 11px 0px;
+    }
+
+    .age_selector {
+        margin: 0 0 29px 0px;
+        width: 175px;
+    }
+
+    .euro220 {
+        margin-top: -4px;
+        letter-spacing: 0.08em;
+    }
+
+    .ticket_amount .buy_ticket {
+        margin-top: 40px;
+    }
+
+    .parallax {
+        margin-top: 60px;
+    }
+
+    .contacts_text img {
+        margin-top: -25px;
+        width: 694px;
+        height: 454px;
+    }
+
+    .contacts_text h5 {
+        padding-bottom: 32px;
+        margin-top: -23px;
+        font-size: 24px;
+    }
+
+    .contacts_text p {
+        padding-bottom: 13px;
+        font: 100 20px "Roboto", sans-serif;
+    }
+
+    footer {
+        margin-top: 58px;
+    }
+
+    .footer_top {
+        padding-top: 59px;
+    }
+
+    .bottom_nav {
+        margin-left: -16px;
+    }
+
+    .additional_menu {
+        grid-column-gap: 68px;
+    }
+
+    .social_links {
+        padding-top: 6px;
+    }
+
+
+    .pagination_container {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .pagination_contents{
+        padding-left: 0;
+        justify-content: flex-end;
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+@media (max-width: 900px) {
+    .squares{
+        padding-left: 20px;
+    }
+    .square {
+        margin-right: 15px;
+    }
+    .pagination_container{
+        margin-top: 0;
+    }
+
+    .arrows {
+        margin-right: 38px;
+
+    }
+}
