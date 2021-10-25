@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player">
+      <div class="player-controls">
+        <button class="play-prev player-icon"></button>
+        <button class="play player-icon"></button>
+        <button class="play-next player-icon"></button>
+      </div>
+      <div class="playlist">
+        <audio src="https://7oom.ru/audio/naturesounds/07%20Birds%20(7oom.ru).mp3"></audio>
+      <ul class="play-list"></ul>
+      </div>
+    </div>
+    <div>
+        <div class="settings-btn">
+          <img src="assets/svg/brush.svg" alt="brush">
+        </div>
+          <div class="settings">
+          <div class="choose-bg">
+            <h3>Background:</h3>
+            <select class="change-bg">
+              <option value="git">Git Images</option>
+              <option class="unsplash" value="unsplash">Unsplash</option>
+              <option value="flickr">Flickr</option>
+            </select>
+          </div>
+          <div class="choose-lang">
+            <h3>Language:</h3>
+            <select class="change-lang">
+              <option value="ru">RU</option>
+              <option value="en" selected>EN</option>
+            </select>
+          </div>
+          <div class="hide-block">
+            <h3>Hide elements:</h3>
+            <label for="hide-time">Time
+              <input type="checkbox" id="hide-time" name="time-block">
+            </label>
+            <label for="hide-date">Date
+              <input type="checkbox" id="hide-date" name="date-block">
+            </label>
+            <label for="hide-greeting">Greeting
+              <input type="checkbox" id="hide-greeting" name="greeting-block">
+            </label>
+            <label for="hide-quote">Quotes
+             <input type="checkbox" id="hide-quote" name="quote-block">
+            </label>
+            <label for="hide-weather">Weather
+              <input type="checkbox" id="hide-weather" name="weather-block">
+            </label>
+            <label for="hide-audio">Audio
+              <input type="checkbox" id="hide-audio" name="audio-block">
+            </label>
+          </div>
+        </div>
+    </div>
+    <div class="weather">
+      <input type="text" class="city" value="Minsk" />
+      <i class="weather-icon owf"></i>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name" value="Stranger"/>
+    </div>
+  </main>
+  <footer class="footer">
+    <button class="change-quote"></button>
+    <div class="quotes">
+      <div class="quote"></div>
+      <div class="author"></div>
+    </div>
+    <div class="footer-footer">
+      <span><a href="https://github.com/ValeriaKarimova"><img class="git_img" src="assets/img/git_log.png" alt="git"></a></span>
+      <span><strong>2021</strong></span>
+      <span><a href="https://rs.school/js/"><img class="school" src="assets/svg/rs_school_js.svg" alt="RS-School"></a></span>
+    </div>
+  </footer>
+  <script src="js/i18next.min.js"></script>
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>
